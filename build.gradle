@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id "io.qameta.allure" version "2.11.2"
+}
+
+group 'guru.qa'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter:5.9.0',
+            'com.codeborne:selenide:6.10.3',
+            'io.qameta.allure:allure-junit5:2.13.6',
+            'io.qameta.allure:allure-commandline:2.13.6',
+            'io.qameta.allure:allure-assertj:2.13.6',
+            'io.qameta.allure:allure-rest-assured:2.13.6',
+            'io.qameta.allure:allure-java-commons:2.17.2',
+            'io.qameta.allure:allure-selenide:2.20.1',
+
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
